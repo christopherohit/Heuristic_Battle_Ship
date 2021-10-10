@@ -1,15 +1,19 @@
-# from intro import Intro
-# from _config import Creat_Background
+from intro import *
+from _config import Creat_Background
 
-hang , cot = 2 , 1
-c = cot
-a = [[1,613,5,32,32,4613,13,13,1],[9,2,6,4,7,8,5,6,100],[45,1,3,95,45,12,66,12,32],[4,56,13,12,784,46,11,32,56]]
-b = []
-
-while cot < c + 5:
-    a[hang][cot] = "X"
-    cot += 1
+# hang , cot = 2 , 1
+# c = cot
+# a = [['_','_','_','_','_','_','_','_','_'],['_','_','_','_','_','_','_','_','_'],['_','X','X','X','X','X','_','_','_'],['_','_','_','_','_','_','_','_','_']]
+# b = []
+# def In_Bang_Game(bando):
+#     print("  A B C D E F G H I J ")
+#     print("  +-+-+-+-+-+-+-+-+-+")
+#     sobat = 1
+#     for hang in bando:
+#         print("%d|%s|" % (sobat, "|".join(hang)))
+#         print("+-+-+-+-+-+-+-+-+-+")
+#         sobat = sobat + 1
         
-print(a)
-# if __name__ == "__main__":
-#     Intro()
+# print(In_Bang_Game(a))
+if __name__ == "__main__":
+    Intro()

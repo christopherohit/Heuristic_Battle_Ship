@@ -1,4 +1,4 @@
-from _config import *
+from _config import Creat_Background
 import time
 
 def Intro():
@@ -18,7 +18,7 @@ def Intro():
     time.sleep(0.5)
     print("việc sắp xếp các tàu và sự Pro của Cô Văn Nan trong việc đoán ra vị trị tàu của đoán phương nhé")
     time.sleep(0.5)
-    print("Chúc các bạn chơi vui vẻ !!!")
+    print("Chúc các bạn chơi vui vẻ !!!-------------------------------------------Creator by: Christopherohit Hendrichs")
     time.sleep(1)
 
     print("Hãy tạo ra kích thước cho vùng biển của bạn đi nào")
