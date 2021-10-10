@@ -1,9 +1,17 @@
 from _action import *
 
 
-print("Hãy nhập lần lượt chiều dài và rộng của biển(Phân cách nhau bằng dấu cách):", end= " ")
-m, n = list(map(int,input().split()))
-a = []
+
+while True:
+    print("Please enter the length and width of the sea respectively (separated by space):", end= " ")
+    m, n = list(map(int,input().split()))
+    a = []
+    if (m , n <= 10):
+        print("This area of war too short so you can't add full ship")
+        continue
+    else:
+        break
+
 def Creat_Background():
     for i in range(m):
         a.append([])
@@ -11,6 +19,7 @@ def Creat_Background():
             a[i].append("__")
     return;
 
+# This function display menu play again when this game had gone to over
 def Play_again():
     ans:bool = True
     while ans:
@@ -56,35 +65,49 @@ def Choose_mode( params: bool = True):
                 params = False
                 continue
 
-# This definite use to Draw 
+# This definite use to Draw ship on map
 def Draw_Ship_On_Map(cot , hang , n):
     c = cot
     while cot < c + (n +1):
         a[hang][cot] = 'X'
         cot += 1
 
+def In_Bang_Game(bando):
+    print("  A B C D E F G H I J ")
+    print("  +-+-+-+-+-+-+-+-+-+")
+    sobat = 1
+    for hang in bando:
+        print("%d|%s|" % (sobat, "|".join(hang)))
+        print("+-+-+-+-+-+-+-+-+-+")
+        sobat = sobat + 1
+
+tau3 = 0    
+# This function to definite position where ship located
 def Position_Ship():
-    for n in range(2,6):
-        print("Bạn muốn đặt tàu " , n+1 , " ở vị trí nào ?" )
-        if (n + 1 == 5):
-            hang , cot = cung_cap_vi_tri_de_ban()
-            Draw_Ship_On_Map(cot , hang , n)
+    '''
+    In this situation , We have 5 ship: 2 area 2, 
+    '''
+    for i in range(2,6):
+        print("You want to set a train" , i+1 , " at which location?" )
+        if (i + 1 == 5):
+            hang , cot = Approve_Location_To_Set_Ship()
+            Draw_Ship_On_Map(cot , hang , i)
+            In_Bang_Game(a)
 
-
-        elif (n + 1 == 4):
-            cot , hang = cung_cap_vi_tri_de_ban()
-            Draw_Ship_On_Map(cot , hang , n)
+        elif (i + 1 == 4):
+            cot , hang = Approve_Location_To_Set_Ship()
+            Draw_Ship_On_Map(cot , hang , i)
             
 
-        elif (n + 1 == 3):
-            cot , hang = cung_cap_vi_tri_de_ban()
-            Draw_Ship_On_Map(cot , hang , n)
+        elif (i + 1 == 3):
+            cot , hang = Approve_Location_To_Set_Ship()
+            Draw_Ship_On_Map(cot , hang , i)
 
-        elif (n + 1 == 2):
-            cot , hang = cung_cap_vi_tri_de_ban()
-            Draw_Ship_On_Map(cot , hang , n)
+        elif (i + 1 == 2):
+            cot , hang = Approve_Location_To_Set_Ship()
+            Draw_Ship_On_Map(cot , hang , i)
 
         elif a[hang][cot] == 'X':
-            print("Vị trí này đã được đặt một tàu khác")
+            print("This location has been locked by another ship")
 
-Choose_mode()
+Position_Ship()
