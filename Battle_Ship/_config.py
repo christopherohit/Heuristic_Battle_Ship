@@ -1,23 +1,28 @@
-from _action import *
+from action import Fight_ship_player, Approve_Location_To_Set_Ship
+from intro import Intro
+import _1_To_Com
+
+Intro()
 
 
+def Creat_Background(m ,n):
+    for i in range(m):
+        a.append([])
+        for j in range(n):
+            a[i].append("__")
 
 while True:
     print("Please enter the length and width of the sea respectively (separated by space):", end= " ")
     m, n = list(map(int,input().split()))
     a = []
-    if (m , n <= 10):
+    if (m < 20 or n < 20):
         print("This area of war too short so you can't add full ship")
         continue
     else:
+        Creat_Background(m ,n)
         break
 
-def Creat_Background():
-    for i in range(m):
-        a.append([])
-        for j in range(n):
-            a[i].append("__")
-    return;
+
 
 # This function display menu play again when this game had gone to over
 def Play_again():
@@ -44,23 +49,26 @@ def Choose_mode( params: bool = True):
             print("This choice is invalid")
             continue
         elif select == "1":
+            Position_Ship()
+            # Config Player
+            print('\n' * 50)
             
             Play_again()
-            if Play_again is False: continue 
+            if Play_again is True: continue 
             else:
                 params = False
                 continue
         elif select == "2":
             
             Play_again()
-            if Play_again: continue 
+            if Play_again is True: continue 
             else:
                 params = False
                 continue
         elif select == "3":
             
             Play_again()
-            if Play_again: continue 
+            if Play_again is True: continue 
             else:
                 params = False
                 continue
@@ -85,29 +93,38 @@ tau3 = 0
 # This function to definite position where ship located
 def Position_Ship():
     '''
-    In this situation , We have 5 ship: 2 area 2, 
+    In this situation , We have 5 ship: 1 area 2, 2 area 3 , 1 area 4 and 1 area 5
     '''
-    for i in range(2,6):
-        print("You want to set a train" , i+1 , " at which location?" )
+    cout3 = 0
+    for i in range(1,6):
+        print("You want to set a ship" , i + 1 , " at which location?" )
         if (i + 1 == 5):
-            hang , cot = Approve_Location_To_Set_Ship()
+            hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
             Draw_Ship_On_Map(cot , hang , i)
             In_Bang_Game(a)
 
         elif (i + 1 == 4):
-            cot , hang = Approve_Location_To_Set_Ship()
+            cot , hang = Approve_Location_To_Set_Ship(m ,n ,i)
             Draw_Ship_On_Map(cot , hang , i)
             
 
         elif (i + 1 == 3):
-            cot , hang = Approve_Location_To_Set_Ship()
-            Draw_Ship_On_Map(cot , hang , i)
+            if cout3 == 0:
+                cot , hang = Approve_Location_To_Set_Ship(m ,n ,i)
+                Draw_Ship_On_Map(cot , hang , i)
+                cout3 += 1
+                i -= 1
+            else:
+                cot , hang = Approve_Location_To_Set_Ship(m,n,i)
+                Draw_Ship_On_Map(cot , hang , i)
+
 
         elif (i + 1 == 2):
-            cot , hang = Approve_Location_To_Set_Ship()
+            cot , hang = Approve_Location_To_Set_Ship(m,n,i)
             Draw_Ship_On_Map(cot , hang , i)
+            In_Bang_Game(a)
 
         elif a[hang][cot] == 'X':
             print("This location has been locked by another ship")
 
-Position_Ship()
+Choose_mode()
