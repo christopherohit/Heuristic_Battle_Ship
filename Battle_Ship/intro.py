@@ -1,4 +1,3 @@
-from _config import Creat_Background
 import time
 
 def Intro():
@@ -22,4 +21,3 @@ def Intro():
     time.sleep(1)
 
     print("Hãy tạo ra kích thước cho vùng biển của bạn đi nào")
-    Creat_Background()
