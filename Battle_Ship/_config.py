@@ -3,14 +3,22 @@ from intro import Intro
 import _1_To_Com
 
 Intro()
+# m is Row
+# n is Columns
+tau3 = 0
 
-
+#Create Background
+'''Complete'''
+'''Test Done'''
 def Creat_Background(m ,n):
     for i in range(m):
         a.append([])
         for j in range(n):
-            a[i].append("__")
+            a[i].append("___")
 
+#Input Parameter
+'''Complete'''
+'''Test Done'''
 while True:
     print("Please enter the length and width of the sea respectively (separated by space):", end= " ")
     m, n = list(map(int,input().split()))
@@ -22,9 +30,9 @@ while True:
         Creat_Background(m ,n)
         break
 
-
-
-# This function display menu play again when this game had gone to over
+#This function display menu play again when this game had gone to over
+'''Complete'''
+'''Test Done'''
 def Play_again():
     ans:bool = True
     while ans:
@@ -39,6 +47,9 @@ def Play_again():
             print("Thanks for play it")
             return False
 
+#This Function Display Menu mode choose the game
+'''Working'''
+'''No Bug or Error untils this time'''
 def Choose_mode( params: bool = True):
     while params:
         print('[1] Play with Com')
@@ -49,48 +60,60 @@ def Choose_mode( params: bool = True):
             print("This choice is invalid")
             continue
         elif select == "1":
+            b = []
             Position_Ship()
             # Config Player
             print('\n' * 50)
-            
             Play_again()
             if Play_again is True: continue 
             else:
                 params = False
                 continue
         elif select == "2":
-            
             Play_again()
             if Play_again is True: continue 
             else:
                 params = False
                 continue
         elif select == "3":
-            
             Play_again()
             if Play_again is True: continue 
             else:
                 params = False
                 continue
 
+
 # This definite use to Draw ship on map
-def Draw_Ship_On_Map(cot , hang , n):
+'''Complete'''
+'''Test Done'''
+def Draw_Ship_On_Map(cot , hang , i):
     c = cot
-    while cot < c + (n +1):
-        a[hang][cot] = 'X'
+    while cot < c + (i +1):
+        a[hang-1][cot - 1] = '_X_'
         cot += 1
 
-def In_Bang_Game(bando):
-    print("  A B C D E F G H I J ")
-    print("  +-+-+-+-+-+-+-+-+-+")
+
+# Complete To Print't Out the ship on the map
+'''Complete'''
+'''Hardly Working I don't ensure that it had never have Error in Future but at this time i working very very good'''
+def In_Bang_Game(bando , n , m):
+    for i in range(n+1):
+        if i ==1:
+            print(" ", i , " ", end=" ")
+        elif i in range(2,10):
+            print(i," ", end= " ")
+        elif i in range(10, 99):
+            print(i , end= "  ")
+    print()
     sobat = 1
     for hang in bando:
         print("%d|%s|" % (sobat, "|".join(hang)))
-        print("+-+-+-+-+-+-+-+-+-+")
+        print("+-" * (m+18))
         sobat = sobat + 1
+ 
 
-tau3 = 0    
 # This function to definite position where ship located
+
 def Position_Ship():
     '''
     In this situation , We have 5 ship: 1 area 2, 2 area 3 , 1 area 4 and 1 area 5
@@ -101,29 +124,26 @@ def Position_Ship():
         if (i + 1 == 5):
             hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
             Draw_Ship_On_Map(cot , hang , i)
-            In_Bang_Game(a)
-
+            In_Bang_Game(a , n , m)
         elif (i + 1 == 4):
-            cot , hang = Approve_Location_To_Set_Ship(m ,n ,i)
+            hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
             Draw_Ship_On_Map(cot , hang , i)
-            
-
+            In_Bang_Game(a ,n ,m)
         elif (i + 1 == 3):
             if cout3 == 0:
-                cot , hang = Approve_Location_To_Set_Ship(m ,n ,i)
+                hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
                 Draw_Ship_On_Map(cot , hang , i)
+                In_Bang_Game(a , n ,m)
                 cout3 += 1
                 i -= 1
             else:
-                cot , hang = Approve_Location_To_Set_Ship(m,n,i)
+                hang , cot = Approve_Location_To_Set_Ship(m,n,i)
                 Draw_Ship_On_Map(cot , hang , i)
-
-
+                In_Bang_Game(a ,n ,m)
         elif (i + 1 == 2):
-            cot , hang = Approve_Location_To_Set_Ship(m,n,i)
+            hang , cot = Approve_Location_To_Set_Ship(m,n,i)
             Draw_Ship_On_Map(cot , hang , i)
-            In_Bang_Game(a)
-
+            In_Bang_Game(a , n ,m )
         elif a[hang][cot] == 'X':
             print("This location has been locked by another ship")
 
