@@ -1,4 +1,20 @@
-
+# Complete To Print't Out the ship on the map
+'''Complete'''
+'''Hardly Working I don't ensure that it had never have Error in Future but at this time i working very very good'''
+def In_Bang_Game(bando , n , m):
+    for i in range(n+1):
+        if i ==1:
+            print(" ", i , " ", end=" ")
+        elif i in range(2,10):
+            print(i," ", end= " ")
+        elif i in range(10, 99):
+            print(i , end= "  ")
+    print()
+    sobat = 1
+    for hang in bando:
+        print("%d|%s|" % (sobat, "|".join(hang)))
+        print("+-" * (m+18))
+        sobat = sobat + 1
 
 # Trường nhập tọa độ để bắn phá tàu đối phương
 def Fight_ship_player(m,n):
@@ -29,12 +45,12 @@ def Fight_ship_player(m,n):
 def Approve_Location_To_Set_Ship(m,n , i):
     out_range = True
     hang = input("Please Enter Location To Set Ship {:d} (from 1 to {:d} in the Vertical directions):".format(i+1,m))
-    while int(hang) not in range(n):
+    while int(hang) not in range(m+1):
         rule = True
         while rule:
             print("You was set ships outside the play area!")
-            hang = input("Please Enter Location To Set Ship (from 0 to {:d}):".format(n - 1))
-            if int(hang) in range(n):
+            hang = input("Please Enter Location To Set Ship (from 0 to {:d}):".format(m))
+            if int(hang) in range(m+1):
                 rule = False
                 break
     while out_range:
