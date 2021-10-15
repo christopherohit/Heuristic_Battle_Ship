@@ -1,6 +1,5 @@
 from action import Fight_ship_player, Approve_Location_To_Set_Ship , In_Bang_Game
 from intro import Intro
-import _1_To_Com
 
 Intro()
 # m is Row
@@ -10,6 +9,7 @@ tau3 = 0
 #Create Background
 '''Complete'''
 '''Test Done'''
+'''100% Working'''
 def Creat_Background(m ,n):
     for i in range(m):
         a.append([])
@@ -19,6 +19,7 @@ def Creat_Background(m ,n):
 #Input Parameter
 '''Complete'''
 '''Test Done'''
+'''100% Working'''
 while True:
     print("Please enter the length and width of the sea respectively (separated by space):", end= " ")
     m, n = list(map(int,input().split()))
@@ -33,6 +34,7 @@ while True:
 #This function display menu play again when this game had gone to over
 '''Complete'''
 '''Test Done'''
+'''100% Working'''
 def Play_again():
     ans:bool = True
     while ans:
@@ -50,6 +52,7 @@ def Play_again():
 #This Function Display Menu mode choose the game
 '''Working'''
 '''No Bug or Error untils this time'''
+'''45% Working'''
 def Choose_mode( params: bool = True):
     while params:
         print('[1] Play with Com')
@@ -82,10 +85,10 @@ def Choose_mode( params: bool = True):
                 params = False
                 continue
 
-
 # This definite use to Draw ship on map
 '''Complete'''
 '''Test Done'''
+'''100% Working'''
 def Draw_Ship_On_Map(cot , hang , i):
     c = cot
     while cot < c + (i +1):
@@ -95,7 +98,9 @@ def Draw_Ship_On_Map(cot , hang , i):
  
 
 # This function to definite position where ship located
-
+'''Complete'''
+'''Test Done'''
+'''100% Working'''
 def Position_Ship():
     '''
     In this situation , We have 5 ship: 1 area 2, 2 area 3 , 1 area 4 and 1 area 5

@@ -1,6 +1,7 @@
 # Complete To Print't Out the ship on the map
 '''Complete'''
 '''Hardly Working I don't ensure that it had never have Error in Future but at this time i working very very good'''
+'''95% Working'''
 def In_Bang_Game(bando , n , m):
     for i in range(n+1):
         if i ==1:
@@ -16,7 +17,10 @@ def In_Bang_Game(bando , n , m):
         print("+-" * (m+18))
         sobat = sobat + 1
 
-# Trường nhập tọa độ để bắn phá tàu đối phương
+# Coordinate input function to bombard enemy ships
+'''Complete'''
+'''Testing Undone'''
+'''Calculating'''
 def Fight_ship_player(m,n):
     cot = int(input("Please Enter Location To Shoot Ships (from 1 to {:d} in the straight direction):".format(m)))
     while cot not in range(m):
@@ -38,10 +42,10 @@ def Fight_ship_player(m,n):
                 break
     return int(hang), int(cot)
 
-
-
-
-# Nhập Tọa độ để đặt tàu
+# Function Input Coordinates to place train
+'''Complete'''
+'''Test Done'''
+'''85% Working'''
 def Approve_Location_To_Set_Ship(m,n , i):
     out_range = True
     hang = input("Please Enter Location To Set Ship {:d} (from 1 to {:d} in the Vertical directions):".format(i+1,m))
