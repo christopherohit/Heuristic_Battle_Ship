@@ -1,8 +1,8 @@
 import _config
 
 
-def _1_Vs_1():
-    print("Hello player, Welcome to here")
-    print('You are choose 1 Vs Com mode')
+def _1_Vs_1(m ,n):
+    b = []
     print('\n'*50)
+    
     

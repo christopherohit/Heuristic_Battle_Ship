@@ -16,17 +16,8 @@ def Intro():
     print("nó đối phương sẽ được một số điểm khá lớn đấy vậy nên hãy vận dụng sự thông thái và khôn ngoan trong")
     time.sleep(0.3)
     print("việc sắp xếp các tàu và sự Pro của Cô Văn Nan trong việc đoán ra vị trị tàu của đoán phương nhé")
-<<<<<<< HEAD
     time.sleep(0.5)
     print("Chúc các bạn chơi vui vẻ !!!-------------------------------------------Creator by: Christopherohit Hendrichs")
     time.sleep(1)
 
     print("Hãy tạo ra kích thước cho vùng biển của bạn đi nào")
-=======
-    time.sleep(0.3)
-    print("Chúc các bạn chơi vui vẻ !!!")
-    time.sleep(0.7)
-
-    print("Hãy tạo ra kích thước cho vùng biển của bạn đi nào")
-    Creat_Background()
->>>>>>> 2770471350011835e053e321e1d21a75578ec4fe
