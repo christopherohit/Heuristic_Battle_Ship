@@ -22,11 +22,11 @@ def battling_on_ocean(a , m ,n,i):
     Emotion_Loser = ["OOPS" , "Too Bad" , "Nood" , "Chicken" , "Unlucky"]
     score = 0
     while temp_shoot < 5:     
-        print("Chọn vị trí để bắn: ")
+        print("Choose a location to shoot: ")
         hang , cot = Fight_ship_player()
 
         if  war_area_background[hang][cot] != ' ':
-            print("Bạn đã từng bắn vào vị trí này ")
+            print("You have ever shot at this location? ")
             temp_shoot = temp_shoot + 1
             continue
 
@@ -53,4 +53,4 @@ def battling_on_ocean(a , m ,n,i):
                 print(random.choice(Emotion_Loser))
                 temp_shoot = temp_shoot + 1
             In_Bang_Game(a , m , n)
-    print("Trò chơi kết thúc")
+    print("Game Over")
