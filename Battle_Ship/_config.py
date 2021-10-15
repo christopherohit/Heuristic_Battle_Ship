@@ -1,4 +1,4 @@
-from action import Fight_ship_player, Approve_Location_To_Set_Ship
+from action import Fight_ship_player, Approve_Location_To_Set_Ship , In_Bang_Game
 from intro import Intro
 import _1_To_Com
 
@@ -92,24 +92,6 @@ def Draw_Ship_On_Map(cot , hang , i):
         a[hang-1][cot - 1] = '_X_'
         cot += 1
 
-
-# Complete To Print't Out the ship on the map
-'''Complete'''
-'''Hardly Working I don't ensure that it had never have Error in Future but at this time i working very very good'''
-def In_Bang_Game(bando , n , m):
-    for i in range(n+1):
-        if i ==1:
-            print(" ", i , " ", end=" ")
-        elif i in range(2,10):
-            print(i," ", end= " ")
-        elif i in range(10, 99):
-            print(i , end= "  ")
-    print()
-    sobat = 1
-    for hang in bando:
-        print("%d|%s|" % (sobat, "|".join(hang)))
-        print("+-" * (m+18))
-        sobat = sobat + 1
  
 
 # This function to definite position where ship located
@@ -129,17 +111,19 @@ def Position_Ship():
             hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
             Draw_Ship_On_Map(cot , hang , i)
             In_Bang_Game(a ,n ,m)
-        elif (i + 1 == 3):
-            if cout3 == 0:
-                hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
-                Draw_Ship_On_Map(cot , hang , i)
-                In_Bang_Game(a , n ,m)
-                cout3 += 1
-                i -= 1
-            else:
-                hang , cot = Approve_Location_To_Set_Ship(m,n,i)
-                Draw_Ship_On_Map(cot , hang , i)
-                In_Bang_Game(a ,n ,m)
+        elif (i + 1 == 3) or i == 3:
+            while cout3 <=1:
+                    if (cout3 == 0):
+                        hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
+                        Draw_Ship_On_Map(cot , hang , i)
+                        In_Bang_Game(a , n ,m)
+                        cout3 += 1
+                    elif cout3 == 1 :
+                        print("You want to set a ship" , i + 1 , " at which location?" )
+                        hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
+                        Draw_Ship_On_Map(cot , hang , i)
+                        In_Bang_Game(a , n ,m)
+                        cout3 += 1
         elif (i + 1 == 2):
             hang , cot = Approve_Location_To_Set_Ship(m,n,i)
             Draw_Ship_On_Map(cot , hang , i)
