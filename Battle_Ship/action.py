@@ -1,3 +1,5 @@
+import random
+
 # Complete To Print't Out the ship on the map
 '''Complete'''
 '''Hardly Working I don't ensure that it had never have Error in Future but at this time i working very very good'''
@@ -22,7 +24,7 @@ def In_Bang_Game(bando , n , m):
 '''Testing Undone'''
 '''Calculating'''
 def Fight_ship_player(m,n):
-    cot = int(input("Please Enter Location To Shoot Ships (from 1 to {:d} in the straight direction):".format(m)))
+    cot = int(input("Please Enter Location To Shoot Ships (from {:d} to {:d} in the straight direction):".format(m//2,m + 1)))
     while cot not in range(m):
         rule = True
         while rule:
@@ -87,3 +89,38 @@ def Approve_Location_To_Set_Ship(m,n , i):
             else:
                 break
     return int(hang) , int(cot)
+
+# Function create Random Ship
+
+
+def Random_Ship(m,n , i , a):
+    count3 = 0
+    for j in range(1,5):
+        i += 1
+        if i == 2 :
+            Draw_Ship_On_Map(n , m, i ,a)
+        elif i == 3:
+            Draw_Ship_On_Map(n ,m ,i ,a)
+            if count3 == 0:
+                count3 += 1
+                i -= 1
+            else:
+                continue
+        elif i == 4:
+            Draw_Ship_On_Map(n, m, i ,a)
+        elif i == 5 :
+            Draw_Ship_On_Map(n , m , i ,a)
+
+
+# This definite use to Draw ship on map
+'''Complete'''
+'''Test Done'''
+'''100% Working'''
+def Draw_Ship_On_Map(cot , hang , i , a):
+    c = cot
+    while cot < c + (i +1):
+        a[hang-1][cot - 1] = '_X_'
+        cot += 1
+
+
+a = [['_','_','_','_','_','_','_','_','_'],['_','_','_','_','_','_','_','_','_'],['_','X','X','X','X','X','_','_','_'],['_','_','_','_','_','_','_','_','_']]

@@ -1,4 +1,4 @@
-from action import Fight_ship_player, Approve_Location_To_Set_Ship , In_Bang_Game
+from action import Fight_ship_player, Approve_Location_To_Set_Ship , In_Bang_Game , Draw_Ship_On_Map
 from intro import Intro
 
 Intro()
@@ -85,18 +85,6 @@ def Choose_mode( params: bool = True):
                 params = False
                 continue
 
-# This definite use to Draw ship on map
-'''Complete'''
-'''Test Done'''
-'''100% Working'''
-def Draw_Ship_On_Map(cot , hang , i):
-    c = cot
-    while cot < c + (i +1):
-        a[hang-1][cot - 1] = '_X_'
-        cot += 1
-
- 
-
 # This function to definite position where ship located
 '''Complete'''
 '''Test Done'''
@@ -110,28 +98,28 @@ def Position_Ship():
         print("You want to set a ship" , i + 1 , " at which location?" )
         if (i + 1 == 5):
             hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
-            Draw_Ship_On_Map(cot , hang , i)
+            Draw_Ship_On_Map(cot , hang , i ,a)
             In_Bang_Game(a , n , m)
         elif (i + 1 == 4):
             hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
-            Draw_Ship_On_Map(cot , hang , i)
+            Draw_Ship_On_Map(cot , hang , i ,a)
             In_Bang_Game(a ,n ,m)
         elif (i + 1 == 3) or i == 3:
             while cout3 <=1:
                     if (cout3 == 0):
                         hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
-                        Draw_Ship_On_Map(cot , hang , i)
+                        Draw_Ship_On_Map(cot , hang , i, a)
                         In_Bang_Game(a , n ,m)
                         cout3 += 1
                     elif cout3 == 1 :
                         print("You want to set a ship" , i + 1 , " at which location?" )
                         hang , cot = Approve_Location_To_Set_Ship(m ,n ,i)
-                        Draw_Ship_On_Map(cot , hang , i)
+                        Draw_Ship_On_Map(cot , hang , i , a)
                         In_Bang_Game(a , n ,m)
                         cout3 += 1
         elif (i + 1 == 2):
             hang , cot = Approve_Location_To_Set_Ship(m,n,i)
-            Draw_Ship_On_Map(cot , hang , i)
+            Draw_Ship_On_Map(cot , hang , i , a)
             In_Bang_Game(a , n ,m )
         elif a[hang][cot] == 'X':
             print("This location has been locked by another ship")
