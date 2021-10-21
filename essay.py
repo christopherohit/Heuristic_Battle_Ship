@@ -1,13 +1,13 @@
 n , m = list(map(int,input().split(" ")))
-a = []
-w = []
+a = [] # List of Work
+w = [] # List of Worker
 time = []
 def Nhapk():
     k = 0
     # code nay cho 2 cau a va b 
     # neu lam cau a de nguyen code ma chay
     # neu lam cau b thi bo phan comment code va chuyen k < m thanh k <= m
-    while k < m:
+    while k <= m:
         w.append(1)
         k += 1
     for i in range(1 ,n+1):
@@ -22,17 +22,17 @@ def Select():
         s = max(time)
         time.remove(s)
         y = min(w)
-        # if y == w[0]:
-        #     s = s * 2
-        #     kda = y + s
-        #     w.insert(0,kda)
-        #     w.remove(y)
-        #     k -= 1
-        # else:
-        kda = y + s
-        w.append(kda)
-        w.remove(y)
-        k -= 1
+        if y == w[0]:
+            s = s * 2
+            kda = y + s
+            w.insert(0,kda)
+            w.remove(y)
+            k -= 1
+        else:
+            kda = y + s
+            w.append(kda)
+            w.remove(y)
+            k -= 1
 Nhapk()
 for i in a:
     c = float(i/8)

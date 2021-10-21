@@ -1,7 +1,7 @@
 n , m = list(map(int,input().split(" ")))
-a = []
+a = [] # List of work
 k = 0
-w = []
+w = [] # List of worker
 while k < m:
    w.append(0)
    k += 1
@@ -26,5 +26,5 @@ while k > 0:
 print('Thoi gian hoan thanh cua may thu 1 la: ',w[0])
 print('Thoi gian hoan thanh cua may thu 2 la: ',w[1])
 print('Thoi gian hoan thanh cua may thu 3 la: ',w[2])
-print()
+print('\n')
 print('thoi gian toi da cho viec hoan thanh moi cong viec la:',max(w))
