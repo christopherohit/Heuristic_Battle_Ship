@@ -1,5 +1,6 @@
 from action import Fight_ship_player, Approve_Location_To_Set_Ship , In_Bang_Game , Draw_Ship_On_Map
 from intro import Intro
+from join_game import war_area_background, battling_on_ocean
 
 Intro()
 # m is Row
@@ -67,6 +68,8 @@ def Choose_mode( params: bool = True):
             Position_Ship()
             # Config Player
             print('\n' * 50)
+            war_area_background(m,n)
+            battling_on_ocean(war_area_background, m,n,5)
             Play_again()
             if Play_again is True: continue 
             else:

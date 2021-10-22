@@ -30,22 +30,22 @@ def battling_on_ocean(a , m ,n,i):
             temp_shoot = temp_shoot + 1
             continue
 
-        if a[hang][cot] == 'X':
+        if a[hang][cot] == 'O':
             print(random.choice(Emotion_Winner))
             if (Fight_ship_player() == Approve_Location_To_Set_Ship(m ,n , i)):
                 war_area_background[hang][cot] = 'O' , 'O' , 'O' , 'O' , 'O'
                 score = score + 1
                 temp_shoot = temp_shoot + 1
             elif (Fight_ship_player() == Approve_Location_To_Set_Ship(m , n ,i)):
-                war_area_background[hang][cot] = 'X' , 'X', 'X' , 'X'
+                war_area_background[hang][cot] = 'O' , 'O', 'O' , 'O'
                 score = score + 2
                 temp_shoot = temp_shoot + 1
             elif (Fight_ship_player() == Approve_Location_To_Set_Ship(m ,n ,i)):
-                war_area_background[hang][cot] = 'X' , 'X' , 'X'
+                war_area_background[hang][cot] = 'O' , 'O' , 'O'
                 score = score + 3
                 temp_shoot = temp_shoot + 1
             elif (Fight_ship_player() == Approve_Location_To_Set_Ship(m ,n ,i)):
-                war_area_background[hang][cot] = 'X', 'X'
+                war_area_background[hang][cot] = 'O', 'O'
                 score = score + 5
                 temp_shoot = temp_shoot + 1
             else:
